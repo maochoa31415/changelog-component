@@ -1,0 +1,191 @@
+:root {
+  --gray-600: #757575;
+  --gray-900: #212121;
+  --dot-size: 12px;
+
+  font-family: "Roboto", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+body {
+  color: var(--gray-800);
+}
+
+.main-container {
+  margin: 0 auto;
+  padding: 0 0 24px 0;
+}
+
+header .title,
+header .subtitle {
+  font-weight: 400;
+  text-align: center;
+}
+
+header .subtitle {
+  margin: 0 0 48px 0;
+  color: var(--gray-600);
+}
+
+.changelog-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: max-content;
+}
+
+.changelog-container .changelog-item {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  height: 48px;
+}
+
+.changelog-container .changelog-item .changelog-date {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 180px;
+  padding: 0 24px 0 0;
+  color: var(--gray-600);
+  border-right: solid 2px var(--gray-900);
+}
+
+.changelog-container .changelog-item .changelog-date::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: var(--dot-size);
+  height: var(--dot-size);
+  background-color: var(--gray-900);
+  transform: translateX(calc(50% + 1px)) translateY(-50%);
+  border-radius: 20px;
+}
+
+.changelog-container .changelog-item .changelog-date.no-dot::after {
+  display: none;
+}
+
+.changelog-container .changelog-item .changelog-description {
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+  padding: 0 0 0 12px;
+}
+
+.changelog-container .btn-visit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  margin: 24px auto 0 auto;
+  width: 280px;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: .03rem;
+  color: #e8f5e9;
+  background-color: #43a047;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 200ms ease;
+  appearance: none;
+}
+
+.changelog-container .btn-visit:hover {
+  background-color: #2e7d32;
+}
+
+.changelog-container .btn-visit:active {
+  background-color: #1b5e20;
+}
+
+@media (max-width: 575.98px) {
+  :root {
+    font-size: 0.85em;
+  }
+
+  .main-container {
+    max-width: 380px;
+  }
+
+  .changelog-container .changelog-item {
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+    padding: 0 0 0 18px;
+    border-left: solid 2px var(--gray-900);
+  }
+
+  .changelog-container .changelog-item:not(.no-dot)::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: var(--dot-size);
+    height: var(--dot-size);
+    background-color: var(--gray-900);
+    transform: translateY(-50%) translateX(-50%);
+    border-radius: 20px;
+  }
+
+  .changelog-container .changelog-item .changelog-date {
+    justify-content: flex-start;
+    padding: 0;
+    border-right: none;
+  }
+
+  .changelog-container .changelog-item .changelog-date::after {
+    display: none;
+  }
+
+  .changelog-container .changelog-item .changelog-description {
+    padding: 0;
+  }
+}
+
+@media (min-width: 576px) {
+  :root {
+    font-size: .8em;
+  }
+
+  .main-container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    font-size: 1em;
+  }
+
+  .main-container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 1200px) {
+  :root {
+    font-size: 1.1em;
+  }
+
+  .main-container {
+    max-width: 1114px;
+  }
+}
+
+@media (min-width: 1400px) {
+  :root {
+    font-size: 1.1em;
+  }
+
+  .main-container {
+    max-width: 1320px;
+  }
+}
+/* End responsive */
